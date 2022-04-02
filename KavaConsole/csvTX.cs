@@ -122,9 +122,14 @@ namespace KavaConsole
             {
                 swap(m, d);
             }
-            else if (type == "incentive/MsgClaimDelegatorReward") { }
-            else if (type == "incentive/MsgClaimHardReward") { }
-            else if (type == "incentive/MsgClaimSwapReward") { }
+            else if (type == "incentive/MsgClaimDelegatorReward") {
+                Console.WriteLine("fixme");
+            }
+            else if (type == "incentive/MsgClaimHardReward") { Console.WriteLine("fixme"); 
+            }
+            else if (type == "incentive/MsgClaimSwapReward") {
+                Console.WriteLine("fixme");
+            }
             else
             {
                 Console.WriteLine("missing tx type: " + label);
@@ -647,11 +652,20 @@ namespace KavaConsole
                     }
                 else
                 {
+                    csvMsg cm = new csvMsg();
+                    
+                    cm.label = "Unknown";
+                    msg.Add(cm); //add empty
+
                     Console.WriteLine("something");
                 }
             }
             else
             {
+                csvMsg cm=new csvMsg();
+                cm.label = "Unknown";
+                msg.Add(cm); //add empty
+                
                 Console.WriteLine("empty");
             }
         }
